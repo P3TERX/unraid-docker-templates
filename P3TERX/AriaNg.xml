@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>AriaNg</Name>
+  <Repository>p3terx/ariang</Repository>
+  <Registry>https://hub.docker.com/r/p3terx/ariang</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Project>https://hub.docker.com/r/p3terx/ariang</Project>
+  <Overview>AriaNg is a modern web frontend making aria2 easier to use. AriaNg is written in pure html &amp;amp; javascript, thus it does not need any compilers or runtime environment. You can just put AriaNg in your web server and open it in your browser. AriaNg uses responsive layout, and supports any desktop or mobile devices.</Overview>
+  <Category>Downloaders: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:6880]/</WebUI>
+  <Icon>https://cdn.jsdelivr.net/gh/P3TERX/unraid-docker-templates/P3TERX/icons/AriaNg.png</Icon>
+  <Description>AriaNg is a modern web frontend making aria2 easier to use. AriaNg is written in pure html &amp;amp; javascript, thus it does not need any compilers or runtime environment. You can just put AriaNg in your web server and open it in your browser. AriaNg uses responsive layout, and supports any desktop or mobile devices.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>6880</HostPort>
+        <ContainerPort>6880</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+  <Config Name="Web Interface Port" Target="6880" Default="6880" Mode="tcp" Description="AriaNg Web Interface Port." Type="Port" Display="always-hide" Required="true" Mask="false">6880</Config>
+</Container>

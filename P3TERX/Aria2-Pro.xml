@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Aria2-Pro</Name>
+  <Repository>p3terx/aria2-pro</Repository>
+  <Registry>https://hub.docker.com/r/p3terx/aria2-pro</Registry>
+  <Network>host</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Project>https://github.com/P3TERX/Docker-Aria2-Pro</Project>
+  <Overview>Aria2 Pro | A perfect Aria2 Docker image.</Overview>
+  <Category>Downloaders: Tools:</Category>
+  <WebUI>http://ariang.js.org/</WebUI>
+  <Icon>https://cdn.jsdelivr.net/gh/P3TERX/unraid-docker-templates/P3TERX/icons/Aria2-Pro.png</Icon>
+  <Description>Aria2 Pro | A perfect Aria2 Docker image.</Description>
+  <Networking>
+    <Mode>host</Mode>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/aria2-downloads</HostDir>
+      <ContainerDir>/downloads</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/aria2-config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>P3TERX</Value>
+      <Name>RPC_SECRET</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>6800</Value>
+      <Name>RPC_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>6888</Value>
+      <Name>LISTEN_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>UMASK_SET</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>IPV6_MODE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>DISK_CACHE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>UPDATE_TRACKERS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>CUSTOM_TRACKER_URL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="User UID" Target="PUID" Default="1000" Mode="" Description="Bind UID to the container, which means you can use a non-root user to manage downloaded files.&#13;&#10;" Type="Variable" Display="always-hide" Required="true" Mask="false">1000</Config>
+  <Config Name="User GID" Target="PGID" Default="100" Mode="" Description="Bind GID to the container, which means you can use a non-root user to manage downloaded files.&#13;&#10;" Type="Variable" Display="always-hide" Required="true" Mask="false">100</Config>
+  <Config Name="Aria2 RPC Secret(aria2.conf)" Target="RPC_SECRET" Default="P3TERX" Mode="" Description="Aria2 RPC Secret, default: P3TERX" Type="Variable" Display="always-hide" Required="true" Mask="true">P3TERX</Config>
+  <Config Name="Aria2 RPC Port(aria2.conf)" Target="RPC_PORT" Default="6800" Mode="" Description="Aria2 RPC Port" Type="Variable" Display="always-hide" Required="true" Mask="false">6800</Config>
+  <Config Name="Aria2 BT/DHT Listen Port(aria2.conf)" Target="LISTEN_PORT" Default="6888" Mode="" Description="Set TCP/UDP port number for BitTorrent downloads. Multiple ports can be specified by using, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together: 6881-6889,6999." Type="Variable" Display="always-hide" Required="true" Mask="false">6888</Config>
+  <Config Name="Aria2 Download Path" Target="/downloads" Default="/mnt/user/appdata/aria2-downloads" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aria2-downloads</Config>
+  <Config Name="Aria2 Configuration File Directory" Target="/config" Default="/mnt/user/appdata/aria2-config" Mode="rw" Description="Container Path: /config" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aria2-config</Config>
+  <Config Name="Umask Setting" Target="UMASK_SET" Default="" Mode="" Description="For umask setting of Aria2, optional , default if left unset is 022" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Enable IPv6 Mode" Target="IPV6_MODE" Default="" Mode="" Description="Whether to enable IPv6 support for Aria2. Optional: true | false. Set the options 'disable-ipv6=false' and 'enable-dht6=true' in the configuration file(aria2.conf)." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Aria2 Disk Cache(aria2.conf)" Target="DISK_CACHE" Default="" Mode="" Description="Set up disk cache. SIZE can include K or M (1K = 1024, 1M = 1024K), e.g 64M." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Update BT Trackers List" Target="UPDATE_TRACKERS" Default="" Mode="" Description="Whether to update BT Trackers List automatically. Optional: true | flase, default if left unset is true" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="BT Trackers List URL" Target="CUSTOM_TRACKER_URL" Default="" Mode="" Description="Custom BT Trackers List URL. If not set, get from https://trackerslist.com/all_aria2.txt." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Time Zone" Target="TZ" Default="Asia/Shanghai" Mode="" Description="Specify a timezone to use e.g. Asia/Shanghai" Type="Variable" Display="advanced-hide" Required="false" Mask="false">Asia/Shanghai</Config>
+</Container>
